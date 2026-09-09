@@ -1,1 +1,52 @@
+# Project Overview – URL Shortener
+
+## 🎯 Purpose
+This project demonstrates how to build a simple URL Shortener in C++ using data structures, hashing, and string manipulation.  
+It converts long URLs into short codes and expands them back to the original link.
+
+---
+
+## 🏗️ Architecture
+- **Input Layer** → Accepts user input (long URL or short code).
+- **Shortener Class** → Core logic:
+  - `shorten(url)` → Generates a random 6‑character code and stores the mapping.
+  - `expand(code)` → Looks up the original URL from the mapping.
+- **Storage** → In‑memory `unordered_map` that maps codes to URLs.
+- **Output Layer** → Displays shortened code or expanded URL.
+
+---
+
+## 🔄 Flow Diagram
+1. User enters a long URL.  
+2. `shorten()` generates a code and saves `{code → URL}` in memory.  
+3. User enters a short code.  
+4. `expand()` retrieves the original URL if it exists, otherwise returns an error.
+
+---
+
+## 📂 Folder Structure
+- `include/` → Header files (`shortener.h`)  
+- `src/` → Source files (`main.cpp`, `shortener.cpp`)  
+- `tests/` → Unit tests (`test_shortener.cpp`)  
+- `docs/` → Documentation (this file, design notes, diagrams)
+
+---
+
+## 🧪 Testing Strategy
+- **Correctness Tests** → Verify that `shorten()` and `expand()` work as expected.  
+- **Edge Cases** → Empty URL, repeated shorten calls, invalid codes.  
+- **Regression Tests** → Ensure new features don’t break existing functionality.
+
+---
+
+## 🚀 Future Enhancements
+- Persistent storage (save mappings to a file or database).  
+- Web interface using REST APIs.  
+- Analytics (track number of times a short code is used).  
+- Expiry dates for short codes.
+
+---
+
+## 📜 License
+MIT License – free to use, modify, and distribute with attribution.
 
